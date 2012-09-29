@@ -1,0 +1,292 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36165D5816165ABD00C2EC79 /* MxOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36165D5716165ABD00C2EC79 /* MxOperation.m */; };
+		364697D91616343600329462 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 364697D81616343600329462 /* Cocoa.framework */; };
+		364697E51616343600329462 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 364697E41616343600329462 /* main.m */; };
+		364697EC1616343600329462 /* MxAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 364697EB1616343600329462 /* MxAppDelegate.m */; };
+		364697EF1616343600329462 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364697ED1616343600329462 /* MainMenu.xib */; };
+		364697F61616345700329462 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 364697F51616345700329462 /* Security.framework */; };
+		364697F81616346300329462 /* SecurityFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 364697F71616346300329462 /* SecurityFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		36165D5616165ABD00C2EC79 /* MxOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxOperation.h; sourceTree = "<group>"; };
+		36165D5716165ABD00C2EC79 /* MxOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxOperation.m; sourceTree = "<group>"; };
+		364697D41616343600329462 /* iFestivalDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFestivalDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		364697D81616343600329462 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		364697DB1616343600329462 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		364697DD1616343600329462 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		364697E01616343600329462 /* iFestivalDownloader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iFestivalDownloader-Info.plist"; sourceTree = "<group>"; };
+		364697E41616343600329462 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		364697E61616343600329462 /* iFestivalDownloader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iFestivalDownloader-Prefix.pch"; sourceTree = "<group>"; };
+		364697EA1616343600329462 /* MxAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MxAppDelegate.h; sourceTree = "<group>"; };
+		364697EB1616343600329462 /* MxAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MxAppDelegate.m; sourceTree = "<group>"; };
+		364697EE1616343600329462 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		364697F51616345700329462 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		364697F71616346300329462 /* SecurityFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecurityFoundation.framework; path = System/Library/Frameworks/SecurityFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		364697D11616343600329462 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				364697D91616343600329462 /* Cocoa.framework in Frameworks */,
+				364697F61616345700329462 /* Security.framework in Frameworks */,
+				364697F81616346300329462 /* SecurityFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		364697C91616343600329462 = {
+			isa = PBXGroup;
+			children = (
+				364697DE1616343600329462 /* iFestivalDownloader */,
+				364697D71616343600329462 /* Frameworks */,
+				364697D51616343600329462 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		364697D51616343600329462 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				364697D41616343600329462 /* iFestivalDownloader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		364697D71616343600329462 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				364697D81616343600329462 /* Cocoa.framework */,
+				364697F71616346300329462 /* SecurityFoundation.framework */,
+				364697F51616345700329462 /* Security.framework */,
+				364697DA1616343600329462 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		364697DA1616343600329462 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				364697DB1616343600329462 /* AppKit.framework */,
+				364697DD1616343600329462 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		364697DE1616343600329462 /* iFestivalDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				364697EA1616343600329462 /* MxAppDelegate.h */,
+				364697EB1616343600329462 /* MxAppDelegate.m */,
+				364697ED1616343600329462 /* MainMenu.xib */,
+				36165D5616165ABD00C2EC79 /* MxOperation.h */,
+				36165D5716165ABD00C2EC79 /* MxOperation.m */,
+				364697DF1616343600329462 /* Supporting Files */,
+			);
+			path = iFestivalDownloader;
+			sourceTree = "<group>";
+		};
+		364697DF1616343600329462 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				364697E01616343600329462 /* iFestivalDownloader-Info.plist */,
+				364697E41616343600329462 /* main.m */,
+				364697E61616343600329462 /* iFestivalDownloader-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		364697D31616343600329462 /* iFestivalDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 364697F21616343600329462 /* Build configuration list for PBXNativeTarget "iFestivalDownloader" */;
+			buildPhases = (
+				364697D01616343600329462 /* Sources */,
+				364697D11616343600329462 /* Frameworks */,
+				364697D21616343600329462 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iFestivalDownloader;
+			productName = iFestivalDownloader;
+			productReference = 364697D41616343600329462 /* iFestivalDownloader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		364697CB1616343600329462 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Mx;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = MxCreative;
+			};
+			buildConfigurationList = 364697CE1616343600329462 /* Build configuration list for PBXProject "iFestivalDownloader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 364697C91616343600329462;
+			productRefGroup = 364697D51616343600329462 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				364697D31616343600329462 /* iFestivalDownloader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		364697D21616343600329462 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				364697EF1616343600329462 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		364697D01616343600329462 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				364697E51616343600329462 /* main.m in Sources */,
+				364697EC1616343600329462 /* MxAppDelegate.m in Sources */,
+				36165D5816165ABD00C2EC79 /* MxOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		364697ED1616343600329462 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				364697EE1616343600329462 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		364697F01616343600329462 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		364697F11616343600329462 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		364697F31616343600329462 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iFestivalDownloader/iFestivalDownloader-Prefix.pch";
+				INFOPLIST_FILE = "iFestivalDownloader/iFestivalDownloader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		364697F41616343600329462 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iFestivalDownloader/iFestivalDownloader-Prefix.pch";
+				INFOPLIST_FILE = "iFestivalDownloader/iFestivalDownloader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		364697CE1616343600329462 /* Build configuration list for PBXProject "iFestivalDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				364697F01616343600329462 /* Debug */,
+				364697F11616343600329462 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		364697F21616343600329462 /* Build configuration list for PBXNativeTarget "iFestivalDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				364697F31616343600329462 /* Debug */,
+				364697F41616343600329462 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 364697CB1616343600329462 /* Project object */;
+}
