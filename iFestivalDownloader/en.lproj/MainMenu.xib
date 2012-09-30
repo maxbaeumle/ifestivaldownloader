@@ -358,7 +358,7 @@
 						<object class="NSPopUpButton" id="893538421">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{94, 262}, {107, 26}}</string>
+							<string key="NSFrame">{{94, 262}, {113, 26}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="715101454"/>
@@ -393,7 +393,7 @@
 						<object class="NSButton" id="715101454">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{206, 263}, {116, 25}}</string>
+							<string key="NSFrame">{{212, 263}, {116, 25}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="567010649"/>
@@ -805,11 +805,11 @@
 							<reference ref="155813468"/>
 							<reference ref="731092096"/>
 							<reference ref="893538421"/>
-							<reference ref="715101454"/>
 							<reference ref="5436307"/>
 							<reference ref="819357909"/>
 							<reference ref="47674848"/>
 							<reference ref="567010649"/>
+							<reference ref="715101454"/>
 						</array>
 						<reference key="parent" ref="972006081"/>
 					</object>
