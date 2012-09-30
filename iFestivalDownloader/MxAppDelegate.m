@@ -71,7 +71,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    _resolutions = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"", @"1280x720",
+    _resolutions = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"", @"1920x1080",
+                    @"", @"1280x720",
                     @"", @"960x540",
                     @"", @"800x448",
                     @"", @"640x360",
@@ -235,7 +236,18 @@
     range = [m3u8 rangeOfString:@"5500_256"];
     
     if (range.location != NSNotFound) {
-        [_resolutions setObject:[m3u8 substringWithRange:[m3u8 lineRangeForRange:range]] forKey:@"1280x720"];
+        // Experimental
+        
+        NSString *substring = [m3u8 substringWithRange:[m3u8 lineRangeForRange:range]];
+        
+        [_resolutions setObject:substring forKey:@"1280x720"];
+        
+        range = [substring rangeOfString:@"5500_256"];
+        substring = [substring stringByReplacingCharactersInRange:range withString:@"8500_256"];
+        
+        [_resolutions setObject:substring forKey:@"1920x1080"];
+        
+        [self.resolution addItemWithTitle:@"1920x1080"];
         [self.resolution addItemWithTitle:@"1280x720"];
     }
     
@@ -274,6 +286,18 @@
     NSSavePanel *savePanel = [NSSavePanel savePanel];
     [savePanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
         if (result == NSFileHandlingPanelOKButton) {
+            if (_fileHandle) {
+                [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                                name:NSFileHandleDataAvailableNotification
+                                                              object:nil];
+                
+                [_fileHandle closeFile];
+                [_fileHandle release];
+                _fileHandle = nil;
+                
+                [self.activityIndicator stopAnimation:nil];
+            }
+            
             [self.monitorITunesButton setEnabled:NO];
             [sender setEnabled:NO];
             
@@ -372,6 +396,8 @@
     } else {
         [self.progressBar stopAnimation:nil];
         [self.progressBar setIndeterminate:NO];
+        
+        [self.monitorITunesButton setEnabled:YES];
         [self.downloadButton setEnabled:YES];
     }
     
@@ -395,6 +421,7 @@
                 [_queue removeObserver:self forKeyPath:keyPath];
                 
                 [self.progressLabel setStringValue:@"Merging..."];
+                
                 [self.progressBar startAnimation:nil];
                 [self.progressBar setIndeterminate:YES];
                 
