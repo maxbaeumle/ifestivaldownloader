@@ -81,14 +81,10 @@
     _queue = [[NSOperationQueue alloc] init];
     [_queue setMaxConcurrentOperationCount:2];
     
-    NSArray *runningApplications = [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.apple.iTunes"];
+    BOOL success = [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/WebObjects/MZStore.woa/wa/viewFeature?id=440027055"]];
     
-    if (![runningApplications lastObject]) {
-        BOOL success = [[NSWorkspace sharedWorkspace] launchApplication:@"iTunes"];
-        
-        if (!success) {
-            exit(1);
-        }
+    if (!success) {
+        exit(1);
     }
 }
 
