@@ -81,7 +81,7 @@
     _queue = [[NSOperationQueue alloc] init];
     [_queue setMaxConcurrentOperationCount:2];
     
-    BOOL success = [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/WebObjects/MZStore.woa/wa/viewFeature?id=440027055"]];
+    BOOL success = [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"itms://search.itunes.apple.com/WebObjects/MZContentLink.woa/wa/link?path=festival"]];
     
     if (!success) {
         exit(1);
