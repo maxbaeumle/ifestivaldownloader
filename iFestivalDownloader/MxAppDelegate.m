@@ -364,7 +364,7 @@
             }
         }];
         
-        _urlCount = [queue operationCount];
+        _urlCount = [_queue operationCount];
         
         [_queue addObserver:self forKeyPath:@"operationCount" options:0 context:NULL];
     } else {
