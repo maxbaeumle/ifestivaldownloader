@@ -16,7 +16,7 @@
     SFAuthorization *_authorization;
     NSFileHandle *_fileHandle;
     
-    int _urlCount;
+    NSUInteger _urlCount;
 }
 
 @property (retain) NSString *urlPath;
@@ -342,51 +342,29 @@
     NSStringEncoding stringEncoding;
     NSString *m3u8 = [NSString stringWithContentsOfURL:url usedEncoding:&stringEncoding error:NULL];
     
-    range = [m3u8 rangeOfString:@"fileSequence_"];
+    range = [m3u8 rangeOfString:@".ts"];
     
     if (range.location != NSNotFound) {
         [self.progressBar stopAnimation:nil];
         [self.progressBar setIndeterminate:NO];
         
-        NSRange lineRange;
-        NSString *substring;
-        
-        int from;
-        int to;
-        
-        lineRange = [m3u8 lineRangeForRange:range];
-        substring = [m3u8 substringWithRange:lineRange];
-        range = [substring rangeOfString:@"fileSequence_"];
-        substring = [substring substringFromIndex:range.length];
-        range = [substring rangeOfString:@".ts"];
-        substring = [substring substringToIndex:range.location];
-        
-        from = [substring intValue];
-        
-        range = [m3u8 rangeOfString:@"#EXT-X-ENDLIST"];
-        
-        lineRange = [m3u8 lineRangeForRange:NSMakeRange(range.location - 1, 1)];
-        substring = [m3u8 substringWithRange:lineRange];
-        range = [substring rangeOfString:@"fileSequence_"];
-        substring = [substring substringFromIndex:range.length];
-        range = [substring rangeOfString:@".ts"];
-        substring = [substring substringToIndex:range.location];
-        
-        to = [substring intValue];
-        
-        _urlCount = to - from;
-        
-        for (int i = from; i <= to; i++) {
-            NSString *urlString = [NSString stringWithFormat:@"http://streaming.itunesfestival.com%@/fileSequence_%d.ts?%@", [[url path] stringByDeletingLastPathComponent], i, self.token];
+        [m3u8 enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {
+            NSRange range = [line rangeOfString:@".ts"];
             
-            MxOperation *operation = [[MxOperation alloc] init];
-            operation.url = [NSURL URLWithString:urlString];
-            operation.destinationPath = [NSString stringWithFormat:@"%@/fileSequence_%d.ts", self.temporaryPath, i];
-            
-            [_queue addOperation:operation];
-            
-            [operation release];
-        }
+            if (range.location != NSNotFound) {
+                NSString *urlString = [NSString stringWithFormat:@"http://streaming.itunesfestival.com%@/%@?%@", [[url path] stringByDeletingLastPathComponent], line, self.token];
+                
+                MxOperation *operation = [[MxOperation alloc] init];
+                operation.url = [NSURL URLWithString:urlString];
+                operation.destinationPath = [NSString stringWithFormat:@"%@/%@", self.temporaryPath, line];
+                
+                [_queue addOperation:operation];
+                
+                [operation release];
+            }
+        }];
+        
+        _urlCount = [queue operationCount];
         
         [_queue addObserver:self forKeyPath:@"operationCount" options:0 context:NULL];
     } else {
