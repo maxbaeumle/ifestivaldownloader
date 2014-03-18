@@ -348,6 +348,8 @@
         [self.progressBar stopAnimation:nil];
         [self.progressBar setIndeterminate:NO];
         
+        __block int fileID = 0;
+        
         [m3u8 enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {
             NSRange range = [line rangeOfString:@".ts"];
             
@@ -356,15 +358,16 @@
                 
                 MxOperation *operation = [[MxOperation alloc] init];
                 operation.url = [NSURL URLWithString:urlString];
-                operation.destinationPath = [NSString stringWithFormat:@"%@/%@", self.temporaryPath, line];
+                operation.destinationPath = [NSString stringWithFormat:@"%@/%d.ts", self.temporaryPath, fileID];
                 
                 [_queue addOperation:operation];
                 
                 [operation release];
+                fileID++;
             }
         }];
         
-        _urlCount = [_queue operationCount];
+        _urlCount = fileID;
         
         [_queue addObserver:self forKeyPath:@"operationCount" options:0 context:NULL];
     } else {
