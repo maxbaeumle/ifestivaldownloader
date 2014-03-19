@@ -16,7 +16,7 @@
     SFAuthorization *_authorization;
     NSFileHandle *_fileHandle;
     
-    NSUInteger _urlCount;
+    int _urlCount;
 }
 
 @property (retain) NSString *urlPath;
@@ -363,6 +363,7 @@
                 [_queue addOperation:operation];
                 
                 [operation release];
+                
                 fileID++;
             }
         }];
@@ -405,12 +406,10 @@
                 NSFileManager *fileManager = [[NSFileManager alloc] init];
                 
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    NSArray *contents = [fileManager contentsOfDirectoryAtPath:self.temporaryPath error:nil];
-                    
                     NSString *filePath;
                     NSData *data;
                     
-                    filePath = [self.temporaryPath stringByAppendingPathComponent:[contents objectAtIndex:0]];
+                    filePath = [self.temporaryPath stringByAppendingPathComponent:@"0.ts"];
                     data = [[NSData alloc] initWithContentsOfFile:filePath];
                     
                     NSString *destinationPath = [self.destinationPath stringByAppendingPathExtension:@"ts"];
@@ -424,8 +423,8 @@
                     
                     NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:temporaryPath];
                     
-                    for (int i = 1; i < [contents count]; i++) {
-                        filePath = [self.temporaryPath stringByAppendingPathComponent:[contents objectAtIndex:i]];
+                    for (int i = 1; i < _urlCount; i++) {
+                        filePath = [self.temporaryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%d.ts", i]];
                         data = [[NSData alloc] initWithContentsOfFile:filePath];
                         
                         [fileHandle writeData:data];
