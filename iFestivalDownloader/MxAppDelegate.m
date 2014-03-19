@@ -407,6 +407,13 @@
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     NSArray *contents = [fileManager contentsOfDirectoryAtPath:self.temporaryPath error:nil];
                     
+                    //Assures that the temporary files are merged in the right order
+                    contents = [contents sortedArrayUsingComparator:^(id objA, id objB) {
+                        NSString *path1 = (NSString *)objA;
+                        NSString *path2 = (NSString *)objB;
+                        return [path1 compare:path2 options:NSNumericSearch];
+                    }];
+                    
                     NSString *filePath;
                     NSData *data;
                     
